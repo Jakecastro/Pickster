@@ -1,0 +1,524 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		23E1626B1BD991C400D542E0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E1626A1BD991C400D542E0 /* main.m */; };
+		23E1626E1BD991C400D542E0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E1626D1BD991C400D542E0 /* AppDelegate.m */; };
+		23E162711BD991C400D542E0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E162701BD991C400D542E0 /* ViewController.m */; };
+		23E162741BD991C400D542E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23E162721BD991C400D542E0 /* Main.storyboard */; };
+		23E162761BD991C400D542E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23E162751BD991C400D542E0 /* Assets.xcassets */; };
+		23E162791BD991C400D542E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23E162771BD991C400D542E0 /* LaunchScreen.storyboard */; };
+		23E162841BD991C400D542E0 /* PicsterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E162831BD991C400D542E0 /* PicsterTests.m */; };
+		23E1628F1BD991C400D542E0 /* PicsterUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E1628E1BD991C400D542E0 /* PicsterUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		23E162801BD991C400D542E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 23E1625E1BD991C400D542E0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 23E162651BD991C400D542E0;
+			remoteInfo = Picster;
+		};
+		23E1628B1BD991C400D542E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 23E1625E1BD991C400D542E0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 23E162651BD991C400D542E0;
+			remoteInfo = Picster;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		23E162661BD991C400D542E0 /* Picster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Picster.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		23E1626A1BD991C400D542E0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		23E1626C1BD991C400D542E0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		23E1626D1BD991C400D542E0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		23E1626F1BD991C400D542E0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		23E162701BD991C400D542E0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		23E162731BD991C400D542E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		23E162751BD991C400D542E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		23E162781BD991C400D542E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		23E1627A1BD991C400D542E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23E1627F1BD991C400D542E0 /* PicsterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PicsterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		23E162831BD991C400D542E0 /* PicsterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PicsterTests.m; sourceTree = "<group>"; };
+		23E162851BD991C400D542E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23E1628A1BD991C400D542E0 /* PicsterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PicsterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		23E1628E1BD991C400D542E0 /* PicsterUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PicsterUITests.m; sourceTree = "<group>"; };
+		23E162901BD991C400D542E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		23E162631BD991C400D542E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23E1627C1BD991C400D542E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23E162871BD991C400D542E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		23E1625D1BD991C400D542E0 = {
+			isa = PBXGroup;
+			children = (
+				23E162681BD991C400D542E0 /* Picster */,
+				23E162821BD991C400D542E0 /* PicsterTests */,
+				23E1628D1BD991C400D542E0 /* PicsterUITests */,
+				23E162671BD991C400D542E0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		23E162671BD991C400D542E0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				23E162661BD991C400D542E0 /* Picster.app */,
+				23E1627F1BD991C400D542E0 /* PicsterTests.xctest */,
+				23E1628A1BD991C400D542E0 /* PicsterUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		23E162681BD991C400D542E0 /* Picster */ = {
+			isa = PBXGroup;
+			children = (
+				23E1626C1BD991C400D542E0 /* AppDelegate.h */,
+				23E1626D1BD991C400D542E0 /* AppDelegate.m */,
+				23E1626F1BD991C400D542E0 /* ViewController.h */,
+				23E162701BD991C400D542E0 /* ViewController.m */,
+				23E162721BD991C400D542E0 /* Main.storyboard */,
+				23E162751BD991C400D542E0 /* Assets.xcassets */,
+				23E162771BD991C400D542E0 /* LaunchScreen.storyboard */,
+				23E1627A1BD991C400D542E0 /* Info.plist */,
+				23E162691BD991C400D542E0 /* Supporting Files */,
+			);
+			path = Picster;
+			sourceTree = "<group>";
+		};
+		23E162691BD991C400D542E0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				23E1626A1BD991C400D542E0 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		23E162821BD991C400D542E0 /* PicsterTests */ = {
+			isa = PBXGroup;
+			children = (
+				23E162831BD991C400D542E0 /* PicsterTests.m */,
+				23E162851BD991C400D542E0 /* Info.plist */,
+			);
+			path = PicsterTests;
+			sourceTree = "<group>";
+		};
+		23E1628D1BD991C400D542E0 /* PicsterUITests */ = {
+			isa = PBXGroup;
+			children = (
+				23E1628E1BD991C400D542E0 /* PicsterUITests.m */,
+				23E162901BD991C400D542E0 /* Info.plist */,
+			);
+			path = PicsterUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		23E162651BD991C400D542E0 /* Picster */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23E162931BD991C400D542E0 /* Build configuration list for PBXNativeTarget "Picster" */;
+			buildPhases = (
+				23E162621BD991C400D542E0 /* Sources */,
+				23E162631BD991C400D542E0 /* Frameworks */,
+				23E162641BD991C400D542E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Picster;
+			productName = Picster;
+			productReference = 23E162661BD991C400D542E0 /* Picster.app */;
+			productType = "com.apple.product-type.application";
+		};
+		23E1627E1BD991C400D542E0 /* PicsterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23E162961BD991C400D542E0 /* Build configuration list for PBXNativeTarget "PicsterTests" */;
+			buildPhases = (
+				23E1627B1BD991C400D542E0 /* Sources */,
+				23E1627C1BD991C400D542E0 /* Frameworks */,
+				23E1627D1BD991C400D542E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				23E162811BD991C400D542E0 /* PBXTargetDependency */,
+			);
+			name = PicsterTests;
+			productName = PicsterTests;
+			productReference = 23E1627F1BD991C400D542E0 /* PicsterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		23E162891BD991C400D542E0 /* PicsterUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23E162991BD991C400D542E0 /* Build configuration list for PBXNativeTarget "PicsterUITests" */;
+			buildPhases = (
+				23E162861BD991C400D542E0 /* Sources */,
+				23E162871BD991C400D542E0 /* Frameworks */,
+				23E162881BD991C400D542E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				23E1628C1BD991C400D542E0 /* PBXTargetDependency */,
+			);
+			name = PicsterUITests;
+			productName = PicsterUITests;
+			productReference = 23E1628A1BD991C400D542E0 /* PicsterUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		23E1625E1BD991C400D542E0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Jake Castro";
+				TargetAttributes = {
+					23E162651BD991C400D542E0 = {
+						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = MKHFE7CYBE;
+					};
+					23E1627E1BD991C400D542E0 = {
+						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = MKHFE7CYBE;
+						TestTargetID = 23E162651BD991C400D542E0;
+					};
+					23E162891BD991C400D542E0 = {
+						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = MKHFE7CYBE;
+						TestTargetID = 23E162651BD991C400D542E0;
+					};
+				};
+			};
+			buildConfigurationList = 23E162611BD991C400D542E0 /* Build configuration list for PBXProject "Picster" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 23E1625D1BD991C400D542E0;
+			productRefGroup = 23E162671BD991C400D542E0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				23E162651BD991C400D542E0 /* Picster */,
+				23E1627E1BD991C400D542E0 /* PicsterTests */,
+				23E162891BD991C400D542E0 /* PicsterUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		23E162641BD991C400D542E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23E162791BD991C400D542E0 /* LaunchScreen.storyboard in Resources */,
+				23E162761BD991C400D542E0 /* Assets.xcassets in Resources */,
+				23E162741BD991C400D542E0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23E1627D1BD991C400D542E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23E162881BD991C400D542E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		23E162621BD991C400D542E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23E162711BD991C400D542E0 /* ViewController.m in Sources */,
+				23E1626E1BD991C400D542E0 /* AppDelegate.m in Sources */,
+				23E1626B1BD991C400D542E0 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23E1627B1BD991C400D542E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23E162841BD991C400D542E0 /* PicsterTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23E162861BD991C400D542E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23E1628F1BD991C400D542E0 /* PicsterUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		23E162811BD991C400D542E0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 23E162651BD991C400D542E0 /* Picster */;
+			targetProxy = 23E162801BD991C400D542E0 /* PBXContainerItemProxy */;
+		};
+		23E1628C1BD991C400D542E0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 23E162651BD991C400D542E0 /* Picster */;
+			targetProxy = 23E1628B1BD991C400D542E0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		23E162721BD991C400D542E0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				23E162731BD991C400D542E0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		23E162771BD991C400D542E0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				23E162781BD991C400D542E0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		23E162911BD991C400D542E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		23E162921BD991C400D542E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		23E162941BD991C400D542E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Picster/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MM.Picster;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		23E162951BD991C400D542E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Picster/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MM.Picster;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		23E162971BD991C400D542E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PicsterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MM.PicsterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Picster.app/Picster";
+			};
+			name = Debug;
+		};
+		23E162981BD991C400D542E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PicsterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MM.PicsterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Picster.app/Picster";
+			};
+			name = Release;
+		};
+		23E1629A1BD991C400D542E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PicsterUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MM.PicsterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Picster;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		23E1629B1BD991C400D542E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PicsterUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MM.PicsterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Picster;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		23E162611BD991C400D542E0 /* Build configuration list for PBXProject "Picster" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23E162911BD991C400D542E0 /* Debug */,
+				23E162921BD991C400D542E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		23E162931BD991C400D542E0 /* Build configuration list for PBXNativeTarget "Picster" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23E162941BD991C400D542E0 /* Debug */,
+				23E162951BD991C400D542E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		23E162961BD991C400D542E0 /* Build configuration list for PBXNativeTarget "PicsterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23E162971BD991C400D542E0 /* Debug */,
+				23E162981BD991C400D542E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		23E162991BD991C400D542E0 /* Build configuration list for PBXNativeTarget "PicsterUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23E1629A1BD991C400D542E0 /* Debug */,
+				23E1629B1BD991C400D542E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 23E1625E1BD991C400D542E0 /* Project object */;
+}
