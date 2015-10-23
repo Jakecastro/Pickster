@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="J56-mn-iAa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="p5i-hJ-bvN">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
@@ -47,7 +47,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-110" y="797"/>
+            <point key="canvasLocation" x="-168" y="521"/>
         </scene>
         <!--Profile-->
         <scene sceneID="dYJ-bO-DQb">
@@ -98,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1kn-qD-0FR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="679" y="797"/>
+            <point key="canvasLocation" x="833" y="501"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Oji-c2-8ij">
@@ -118,7 +118,29 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z2y-eu-IIz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="326" y="25"/>
+            <point key="canvasLocation" x="298" y="-412"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Uqt-wp-lNU">
+            <objects>
+                <viewController id="p5i-hJ-bvN" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dGe-Na-ui8"/>
+                        <viewControllerLayoutGuide type="bottom" id="Z8u-5m-jC4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sEU-gq-3KO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="J56-mn-iAa" kind="show" id="l0f-Ld-5lF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q47-y3-wUk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-486" y="-412"/>
         </scene>
     </scenes>
     <resources>
