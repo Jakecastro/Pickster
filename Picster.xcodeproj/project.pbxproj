@@ -98,12 +98,12 @@
 		23E163731BDB184F00D542E0 /* ActivityFeedCommentsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityFeedCommentsTableViewController.m; sourceTree = "<group>"; };
 		23E163751BDB187500D542E0 /* ActivityFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityFeedViewController.h; sourceTree = "<group>"; };
 		23E163761BDB187500D542E0 /* ActivityFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityFeedViewController.m; sourceTree = "<group>"; };
-		23E163781BDB18D500D542E0 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
-		23E163791BDB18D500D542E0 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
-		23E1637B1BDB18FB00D542E0 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		23E1637C1BDB18FB00D542E0 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		23E1637E1BDB193100D542E0 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
-		23E1637F1BDB193100D542E0 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		23E163781BDB18D500D542E0 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CameraViewController.h; path = Picster/CameraViewController.h; sourceTree = "<group>"; };
+		23E163791BDB18D500D542E0 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CameraViewController.m; path = Picster/CameraViewController.m; sourceTree = "<group>"; };
+		23E1637B1BDB18FB00D542E0 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = Picster/HomeViewController.h; sourceTree = "<group>"; };
+		23E1637C1BDB18FB00D542E0 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = Picster/HomeViewController.m; sourceTree = "<group>"; };
+		23E1637E1BDB193100D542E0 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = Picster/ProfileViewController.h; sourceTree = "<group>"; };
+		23E1637F1BDB193100D542E0 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = Picster/ProfileViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +159,12 @@
 				23E163731BDB184F00D542E0 /* ActivityFeedCommentsTableViewController.m */,
 				23E163751BDB187500D542E0 /* ActivityFeedViewController.h */,
 				23E163761BDB187500D542E0 /* ActivityFeedViewController.m */,
+				23E163781BDB18D500D542E0 /* CameraViewController.h */,
+				23E163791BDB18D500D542E0 /* CameraViewController.m */,
+				23E1637B1BDB18FB00D542E0 /* HomeViewController.h */,
+				23E1637C1BDB18FB00D542E0 /* HomeViewController.m */,
+				23E1637E1BDB193100D542E0 /* ProfileViewController.h */,
+				23E1637F1BDB193100D542E0 /* ProfileViewController.m */,
 				23E1629C1BD9927000D542E0 /* Framework */,
 				23E162681BD991C400D542E0 /* Picster */,
 				23E162821BD991C400D542E0 /* PicsterTests */,
@@ -183,12 +189,6 @@
 				23E1626C1BD991C400D542E0 /* AppDelegate.h */,
 				23E1626D1BD991C400D542E0 /* AppDelegate.m */,
 				23E162721BD991C400D542E0 /* Main.storyboard */,
-				23E163781BDB18D500D542E0 /* CameraViewController.h */,
-				23E163791BDB18D500D542E0 /* CameraViewController.m */,
-				23E1637B1BDB18FB00D542E0 /* HomeViewController.h */,
-				23E1637C1BDB18FB00D542E0 /* HomeViewController.m */,
-				23E1637E1BDB193100D542E0 /* ProfileViewController.h */,
-				23E1637F1BDB193100D542E0 /* ProfileViewController.m */,
 				23E162751BD991C400D542E0 /* Assets.xcassets */,
 				23E162771BD991C400D542E0 /* LaunchScreen.storyboard */,
 				23E1627A1BD991C400D542E0 /* Info.plist */,
