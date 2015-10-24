@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		23E1626B1BD991C400D542E0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E1626A1BD991C400D542E0 /* main.m */; };
 		23E1626E1BD991C400D542E0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E1626D1BD991C400D542E0 /* AppDelegate.m */; };
-		23E162711BD991C400D542E0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E162701BD991C400D542E0 /* ViewController.m */; };
 		23E162741BD991C400D542E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23E162721BD991C400D542E0 /* Main.storyboard */; };
 		23E162761BD991C400D542E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23E162751BD991C400D542E0 /* Assets.xcassets */; };
 		23E162791BD991C400D542E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23E162771BD991C400D542E0 /* LaunchScreen.storyboard */; };
@@ -34,6 +33,12 @@
 		23E162BE1BD9933A00D542E0 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 23E162BD1BD9933A00D542E0 /* libsqlite3.tbd */; };
 		23E162C01BD9935100D542E0 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23E162BF1BD9935100D542E0 /* Accounts.framework */; };
 		23E162C21BD9935700D542E0 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23E162C11BD9935700D542E0 /* Social.framework */; };
+		23E163711BDB183300D542E0 /* UserCommentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E163701BDB183300D542E0 /* UserCommentsTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		23E163741BDB184F00D542E0 /* ActivityFeedCommentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E163731BDB184F00D542E0 /* ActivityFeedCommentsTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		23E163771BDB187500D542E0 /* ActivityFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E163761BDB187500D542E0 /* ActivityFeedViewController.m */; settings = {ASSET_TAGS = (); }; };
+		23E1637A1BDB18D500D542E0 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E163791BDB18D500D542E0 /* CameraViewController.m */; settings = {ASSET_TAGS = (); }; };
+		23E1637D1BDB18FB00D542E0 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E1637C1BDB18FB00D542E0 /* HomeViewController.m */; settings = {ASSET_TAGS = (); }; };
+		23E163801BDB193100D542E0 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E1637F1BDB193100D542E0 /* ProfileViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,8 +63,6 @@
 		23E1626A1BD991C400D542E0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		23E1626C1BD991C400D542E0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		23E1626D1BD991C400D542E0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		23E1626F1BD991C400D542E0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		23E162701BD991C400D542E0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		23E162731BD991C400D542E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		23E162751BD991C400D542E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		23E162781BD991C400D542E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -89,6 +92,18 @@
 		23E162BD1BD9933A00D542E0 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		23E162BF1BD9935100D542E0 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		23E162C11BD9935700D542E0 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		23E1636F1BDB183300D542E0 /* UserCommentsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCommentsTableViewController.h; sourceTree = "<group>"; };
+		23E163701BDB183300D542E0 /* UserCommentsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCommentsTableViewController.m; sourceTree = "<group>"; };
+		23E163721BDB184F00D542E0 /* ActivityFeedCommentsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityFeedCommentsTableViewController.h; sourceTree = "<group>"; };
+		23E163731BDB184F00D542E0 /* ActivityFeedCommentsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityFeedCommentsTableViewController.m; sourceTree = "<group>"; };
+		23E163751BDB187500D542E0 /* ActivityFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityFeedViewController.h; sourceTree = "<group>"; };
+		23E163761BDB187500D542E0 /* ActivityFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityFeedViewController.m; sourceTree = "<group>"; };
+		23E163781BDB18D500D542E0 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		23E163791BDB18D500D542E0 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		23E1637B1BDB18FB00D542E0 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		23E1637C1BDB18FB00D542E0 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		23E1637E1BDB193100D542E0 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		23E1637F1BDB193100D542E0 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +153,12 @@
 		23E1625D1BD991C400D542E0 = {
 			isa = PBXGroup;
 			children = (
+				23E1636F1BDB183300D542E0 /* UserCommentsTableViewController.h */,
+				23E163701BDB183300D542E0 /* UserCommentsTableViewController.m */,
+				23E163721BDB184F00D542E0 /* ActivityFeedCommentsTableViewController.h */,
+				23E163731BDB184F00D542E0 /* ActivityFeedCommentsTableViewController.m */,
+				23E163751BDB187500D542E0 /* ActivityFeedViewController.h */,
+				23E163761BDB187500D542E0 /* ActivityFeedViewController.m */,
 				23E1629C1BD9927000D542E0 /* Framework */,
 				23E162681BD991C400D542E0 /* Picster */,
 				23E162821BD991C400D542E0 /* PicsterTests */,
@@ -161,9 +182,13 @@
 			children = (
 				23E1626C1BD991C400D542E0 /* AppDelegate.h */,
 				23E1626D1BD991C400D542E0 /* AppDelegate.m */,
-				23E1626F1BD991C400D542E0 /* ViewController.h */,
-				23E162701BD991C400D542E0 /* ViewController.m */,
 				23E162721BD991C400D542E0 /* Main.storyboard */,
+				23E163781BDB18D500D542E0 /* CameraViewController.h */,
+				23E163791BDB18D500D542E0 /* CameraViewController.m */,
+				23E1637B1BDB18FB00D542E0 /* HomeViewController.h */,
+				23E1637C1BDB18FB00D542E0 /* HomeViewController.m */,
+				23E1637E1BDB193100D542E0 /* ProfileViewController.h */,
+				23E1637F1BDB193100D542E0 /* ProfileViewController.m */,
 				23E162751BD991C400D542E0 /* Assets.xcassets */,
 				23E162771BD991C400D542E0 /* LaunchScreen.storyboard */,
 				23E1627A1BD991C400D542E0 /* Info.plist */,
@@ -357,9 +382,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23E162711BD991C400D542E0 /* ViewController.m in Sources */,
 				23E1626E1BD991C400D542E0 /* AppDelegate.m in Sources */,
+				23E163711BDB183300D542E0 /* UserCommentsTableViewController.m in Sources */,
+				23E163801BDB193100D542E0 /* ProfileViewController.m in Sources */,
 				23E1626B1BD991C400D542E0 /* main.m in Sources */,
+				23E1637A1BDB18D500D542E0 /* CameraViewController.m in Sources */,
+				23E163771BDB187500D542E0 /* ActivityFeedViewController.m in Sources */,
+				23E1637D1BDB18FB00D542E0 /* HomeViewController.m in Sources */,
+				23E163741BDB184F00D542E0 /* ActivityFeedCommentsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -593,6 +623,7 @@
 				23E162951BD991C400D542E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		23E162961BD991C400D542E0 /* Build configuration list for PBXNativeTarget "PicsterTests" */ = {
 			isa = XCConfigurationList;
@@ -601,6 +632,7 @@
 				23E162981BD991C400D542E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		23E162991BD991C400D542E0 /* Build configuration list for PBXNativeTarget "PicsterUITests" */ = {
 			isa = XCConfigurationList;
@@ -609,6 +641,7 @@
 				23E1629B1BD991C400D542E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
