@@ -150,7 +150,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		23E1625D1BD991C400D542E0 = {
+		234B8B0E1BDC4CA100A3950D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				23E1636F1BDB183300D542E0 /* UserCommentsTableViewController.h */,
@@ -165,6 +165,14 @@
 				23E1637C1BDB18FB00D542E0 /* HomeViewController.m */,
 				23E1637E1BDB193100D542E0 /* ProfileViewController.h */,
 				23E1637F1BDB193100D542E0 /* ProfileViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		23E1625D1BD991C400D542E0 = {
+			isa = PBXGroup;
+			children = (
+				234B8B0E1BDC4CA100A3950D /* Controllers */,
 				23E1629C1BD9927000D542E0 /* Framework */,
 				23E162681BD991C400D542E0 /* Picster */,
 				23E162821BD991C400D542E0 /* PicsterTests */,
