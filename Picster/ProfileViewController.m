@@ -7,6 +7,8 @@
 //
 
 #import "ProfileViewController.h"
+#import <Parse/Parse.h>
+
 
 @interface ProfileViewController () //<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet UIImageView *userImageView;

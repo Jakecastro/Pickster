@@ -7,6 +7,8 @@
 //
 
 #import "ActivityFeedCommentsTableViewController.h"
+#import <Parse/Parse.h>
+
 
 @interface ActivityFeedCommentsTableViewController ()
 

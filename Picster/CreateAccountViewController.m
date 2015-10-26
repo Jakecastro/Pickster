@@ -1,20 +1,18 @@
 //
-//  ActivityFeedViewController.m
+//  CreateAccountViewController.m
 //  Picster
 //
-//  Created by Jake Castro on 10/23/15.
+//  Created by Jake Castro on 10/26/15.
 //  Copyright © 2015 Jake Castro. All rights reserved.
 //
 
-#import "ActivityFeedViewController.h"
-#import <Parse/Parse.h>
+#import "CreateAccountViewController.h"
 
-
-@interface ActivityFeedViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface CreateAccountViewController ()
 
 @end
 
-@implementation ActivityFeedViewController
+@implementation CreateAccountViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,15 +33,5 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
-}
 
 @end

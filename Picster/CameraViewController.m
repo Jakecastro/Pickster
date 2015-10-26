@@ -8,6 +8,8 @@
 
 #import "CameraViewController.h"
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+
 
 @interface CameraViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *postImageView;
@@ -20,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.postImageView.image = [UIImage imageNamed:@"Phil"];
-    self.view.backgroundColor = [UIColor colorWithHue:0.0 saturation:0.0 brightness:1.0 alpha:0.5];
+    self.view.backgroundColor = [UIColor lightGrayColor];
     // Do any additional setup after loading the view.
 }
 

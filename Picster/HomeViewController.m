@@ -7,6 +7,8 @@
 //
 
 #import "HomeViewController.h"
+#import <Parse/Parse.h>
+
 
 @interface HomeViewController () <UITableViewDataSource, UITableViewDataSource, UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -21,9 +23,11 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:YES];
+
+    
 }
 
 /*

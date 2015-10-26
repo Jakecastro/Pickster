@@ -7,6 +7,8 @@
 //
 
 #import "UserCommentsTableViewController.h"
+#import <Parse/Parse.h>
+
 
 @interface UserCommentsTableViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *userCommentsTableView;
