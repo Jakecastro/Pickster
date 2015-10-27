@@ -22,8 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //self.loginButton.enabled = false;
-    //self.loginButton.alpha = 0.5;
+//    self.loginButton.enabled = false;
+//    self.loginButton.alpha = 0.5;
 
     [self.loginButton addTarget:self action:@selector(loginUser) forControlEvents:UIControlEventTouchUpInside];
 
@@ -32,9 +32,23 @@
 
 -(void)loginUser {
     if ([self.usernameTextField hasText] && [self.passwordTextField hasText]) {
+//        self.loginButton.enabled = true;
+//        self.loginButton.alpha = 1.0;
         [PFUser logInWithUsernameInBackground:self.usernameTextField.text password:self.passwordTextField.text block:^(PFUser * _Nullable user, NSError * _Nullable error) {
             if (error) {
                 NSLog(@"login failed");
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Oooops"
+                                                                               message:@"username and/or password is incorrect"
+                                                                        preferredStyle:UIAlertControllerStyleAlert];
+
+                UIAlertAction *tryAgain = [UIAlertAction actionWithTitle:@"Try Again"
+                                                               style:UIAlertActionStyleDefault
+                                                             handler:^(UIAlertAction *action) {
+                                                             }];
+                [alert addAction:tryAgain];
+                [self presentViewController:alert
+                                   animated:YES
+                                 completion:nil];
             }
             else {
                 NSLog(@"success");
