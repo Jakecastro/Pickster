@@ -7,48 +7,54 @@
 //
 
 #import "HomeViewController.h"
+#import "LogInViewController.h"
 #import <Parse/Parse.h>
 
 
 @interface HomeViewController () <UITableViewDataSource, UITableViewDataSource, UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *feedTableView;
-
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong,nonatomic) PFUser *currentUser;
+@property (strong,nonatomic) NSArray *users;
 @end
 
 @implementation HomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.currentUser = [PFUser currentUser];
+//    NSLog(@"User: %@",self.currentUser);
 }
 
-
-
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:YES];
-
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    PFUser *currentUser = [PFUser currentUser];
+//    [PFUser logOut];
+    
+    if (!currentUser) {
+        LogInViewController *loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"loginController"];
+        [self presentViewController:loginVC animated:YES completion:nil];
+    }
     
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return [self.users count];
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"feedPhotoCell"];
+    cell.textLabel.text = [self.users objectAtIndex:indexPath.row];
+    
+    return cell;
 }
 
 @end

@@ -10,9 +10,11 @@
 #import <Parse/Parse.h>
 #import "HomeViewController.h"
 #import "LogInViewController.h"
+#import "ActivityFeedViewController.h"
+#import "CameraViewController.h"
 
 @interface AppDelegate ()
-
+@property (strong,nonatomic) UITabBarController *tabBarController;
 @end
 
 @implementation AppDelegate
@@ -23,9 +25,15 @@
     [Parse enableLocalDatastore];
     [Parse setApplicationId:@"YDeHOhHiYM3o17VAxIdLyaKlW7wXlWAV3zLIFfMs"
                   clientKey:@"ZKB9A4NlsMyfFAlsILcLC6P7wkL29fX75J70lMJm"];
-
+    
+    
 //    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
 //    UIViewController *homeVC = [storyboard instantiateViewControllerWithIdentifier:@"homeController"];
+//    UIViewController *cameraVC = [storyboard instantiateViewControllerWithIdentifier:@"cameraController"];
+//    UIViewController *profileVC = [storyboard instantiateViewControllerWithIdentifier:@"profileController"];
+//    UIViewController *activityVC = [storyboard instantiateViewControllerWithIdentifier:@"homeController"];
+//    self.tabBarController = [[UITabBarController alloc]init];
+//    self.tabBarController.viewControllers = @[homeVC,cameraVC,activityVC,profileVC];
 //    PFUser *currentUser = [PFUser currentUser];
 //
 //    if (currentUser) {
@@ -38,6 +46,8 @@
 //        self.window.rootViewController = loginVC;
 //
 //    }
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    self.tabBarController = (UITabBarController *)self.window.rootViewController;
 //    [self.window makeKeyAndVisible];
 //    [homeVC presentViewController:loginVC animated:YES completion:nil];
 
