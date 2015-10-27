@@ -11,7 +11,7 @@
 #import <Parse/Parse.h>
 
 
-@interface CameraViewController ()
+@interface CameraViewController ()<UIImagePickerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *postImageView;
 @property (weak, nonatomic) IBOutlet UIButton *postButton;
 
@@ -21,24 +21,105 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.postImageView.image = [UIImage imageNamed:@"Phil"];
+//    self.postImageView.image = [UIImage imageNamed:@"Phil"];
     self.view.backgroundColor = [UIColor lightGrayColor];
-    // Do any additional setup after loading the view.
+    [self popUpAlertController];
+
+
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewWillAppear:(BOOL)animated{
+    [self popUpAlertController];
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)popUpAlertController{
+
+
+    UIAlertController * view=   [UIAlertController
+                                 alertControllerWithTitle:@"Pick Picuture for Post"
+                                 message:@"Select you Choice"
+                                 preferredStyle:UIAlertControllerStyleActionSheet];
+
+    UIAlertAction* takeAPhoto = [UIAlertAction
+                         actionWithTitle:@"Take a photo"
+                         style:UIAlertActionStyleDefault
+                         handler:^(UIAlertAction * action)
+                         {
+
+                             UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+                             picker.delegate = self;
+                             picker.allowsEditing = YES;
+                             picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+                             
+                             [self presentViewController:picker animated:YES completion:NULL];
+
+                             [view dismissViewControllerAnimated:YES completion:nil];
+
+                             
+
+                         }];
+    UIAlertAction* photoLib = [UIAlertAction
+                             actionWithTitle:@"Photo Library"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+
+                             {
+                                 UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+                                 picker.delegate = self;
+                                 picker.allowsEditing = YES;
+                                 picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                                 
+                                 [self presentViewController:picker animated:YES completion:NULL];
+
+                                 [view dismissViewControllerAnimated:YES completion:nil];
+                             }];
+
+
+    [view addAction:photoLib];
+    [view addAction:takeAPhoto];
+    [self presentViewController:view animated:YES completion:nil];
+
+
+
+
+
 }
-*/
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+
+    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+    self.postImageView.image = chosenImage;
+
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @end
