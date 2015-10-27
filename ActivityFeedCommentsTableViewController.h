@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ActivityFeedCommentsTableViewController : UITableViewController
+@property NSArray *userComments;
 
 @end
