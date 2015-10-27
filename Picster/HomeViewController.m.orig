@@ -15,15 +15,20 @@
 @interface HomeViewController () <UITableViewDataSource, UITableViewDataSource, UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *feedTableView;
+<<<<<<< Updated upstream
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong,nonatomic) PFUser *currentUser;
 @property (strong,nonatomic) NSArray *users;
+=======
+@property NSArray *allUsers;
+>>>>>>> Stashed changes
 @end
 
 @implementation HomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+<<<<<<< Updated upstream
     
     self.currentUser = [PFUser currentUser];
 //    NSLog(@"User: %@",self.currentUser);
@@ -39,6 +44,23 @@
         LogInViewController *loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"loginController"];
         [self presentViewController:loginVC animated:YES completion:nil];
     }
+=======
+    // Do any additional setup after loading the view.
+
+}
+
+
+
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+
+    if (![PFUser currentUser]) {
+
+    }
+
+
+>>>>>>> Stashed changes
     
 }
 
