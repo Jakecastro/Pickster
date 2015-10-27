@@ -22,11 +22,68 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
 }
 
 - (IBAction)onCreateAndLoginButtonPressed:(UIButton *)sender {
+    PFUser *user = [PFUser user];
     
+    if (![self.passwordTextField.text isEqualToString:self.verifyPasswordTextField.text]) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
+                                                                       message:@"Passwords not matching!"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *tryAgain = [UIAlertAction actionWithTitle:@"Try Again"
+                                                           style:UIAlertActionStyleDefault
+                                                         handler:^(UIAlertAction *action) {
+                                                         }];
+        [alert addAction:tryAgain];
+        [self presentViewController:alert
+                           animated:YES
+                         completion:nil];
+        return;
+    }else{
+        user.username = self.usernameTextField.text;
+        user.password = self.passwordTextField.text;
+        user.email = self.emailAddressTextField.text;
+    }
+    
+    if ([self.usernameTextField hasText] && [self.passwordTextField hasText] && [self.emailAddressTextField hasText] && [self.verifyPasswordTextField hasText]) {
+        
+        [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            if (succeeded) {
+                // Success
+                NSLog(@"Success");
+            } else {
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
+                                                                               message:@"There was a problem. Please try again later!"
+                                                                        preferredStyle:UIAlertControllerStyleAlert];
+                
+                UIAlertAction *tryAgain = [UIAlertAction actionWithTitle:@"OK"
+                                                                   style:UIAlertActionStyleDefault
+                                                                 handler:^(UIAlertAction *action) {
+                                                                 }];
+                [alert addAction:tryAgain];
+                [self presentViewController:alert
+                                   animated:YES
+                                 completion:nil];
+            }
+        }];
+    }else{
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
+                                                                       message:@"Information is not Correct!"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *tryAgain = [UIAlertAction actionWithTitle:@"Try Again!"
+                                                           style:UIAlertActionStyleDefault
+                                                         handler:^(UIAlertAction *action) {
+                                                         }];
+        [alert addAction:tryAgain];
+        [self presentViewController:alert
+                           animated:YES
+                         completion:nil];
+    }
+
 }
 
 
