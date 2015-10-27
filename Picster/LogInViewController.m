@@ -61,6 +61,18 @@
         //self.loginButton.enabled = true;
         //self.loginButton.alpha = 1.0;
         NSLog(@"Type Something");
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Ooops"
+                                                                       message:@"you must enter a username and a password before pressing login"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+
+        UIAlertAction *tryAgain = [UIAlertAction actionWithTitle:@"Try Again"
+                                                           style:UIAlertActionStyleDefault
+                                                         handler:^(UIAlertAction *action) {
+                                                         }];
+        [alert addAction:tryAgain];
+        [self presentViewController:alert
+                           animated:YES
+                         completion:nil];
     }
 
 
