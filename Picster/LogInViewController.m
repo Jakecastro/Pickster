@@ -7,8 +7,14 @@
 //
 
 #import "LogInViewController.h"
+#import <Parse/Parse.h>
+#import "HomeViewController.h"
 
 @interface LogInViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UIButton *createAccountButton;
 
 @end
 
@@ -16,22 +22,41 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    //self.loginButton.enabled = false;
+    //self.loginButton.alpha = 0.5;
+
+    [self.loginButton addTarget:self action:@selector(loginUser) forControlEvents:UIControlEventTouchUpInside];
+
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)loginUser {
+    if ([self.usernameTextField hasText] && [self.passwordTextField hasText]) {
+        [PFUser logInWithUsernameInBackground:self.usernameTextField.text password:self.passwordTextField.text block:^(PFUser * _Nullable user, NSError * _Nullable error) {
+            if (error) {
+                NSLog(@"login failed");
+            }
+            else {
+                NSLog(@"success");
+                [self dismissViewControllerAnimated:YES completion:nil];
+
+            }
+        }];
+
+    } else{
+        //self.loginButton.enabled = true;
+        //self.loginButton.alpha = 1.0;
+        NSLog(@"Type Something");
+    }
+
+
+
 }
 
-/*
-#pragma mark - Navigation
+- (IBAction)onCreateAccountButtonPressed:(UIButton *)sender {
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
 }
-*/
+
+
 
 @end

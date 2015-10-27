@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import "HomeViewController.h"
+#import "LogInViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,6 +23,23 @@
     [Parse enableLocalDatastore];
     [Parse setApplicationId:@"YDeHOhHiYM3o17VAxIdLyaKlW7wXlWAV3zLIFfMs"
                   clientKey:@"ZKB9A4NlsMyfFAlsILcLC6P7wkL29fX75J70lMJm"];
+
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    UIViewController *homeVC = [storyboard instantiateViewControllerWithIdentifier:@"homeController"];
+//    PFUser *currentUser = [PFUser currentUser];
+//
+//    if (currentUser) {
+//        UITabBarController *tabBar = (UITabBarController *)self.window.rootViewController;
+//        tabBar.selectedIndex = 0;
+//    }
+//    else {
+//        UIViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"loginController"];
+//        self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//        self.window.rootViewController = loginVC;
+//
+//    }
+//    [self.window makeKeyAndVisible];
+//    [homeVC presentViewController:loginVC animated:YES completion:nil];
 
     return YES;
 
