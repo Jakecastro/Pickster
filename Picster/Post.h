@@ -9,6 +9,7 @@
 #import <Parse/Parse.h>
 
 @interface Post : PFObject
+
 @property NSMutableArray *commentsArray;
 @property UIImage *postImage;
 //probably need to change above to a PFfile like below

@@ -10,7 +10,7 @@
 
 @interface User : PFUser
 
-@property UIImage *profileImage;
+@property PFFile *profileImage;
 @property NSMutableArray *photosArray;
 @property NSMutableArray *follwersArray;
 @property NSMutableArray *followingArray;

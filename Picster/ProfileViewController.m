@@ -20,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *numberOfPosts;
 @property (weak, nonatomic) IBOutlet UICollectionView *userImagesCollectionView;
 
+@property (strong,nonatomic) NSArray *dataArray;
+
 @end
 
 @implementation ProfileViewController
@@ -27,7 +29,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.userImageView.image = [UIImage imageNamed:@"Phil"];
+    PFUser *user = [PFUser currentUser];
+    PFQuery *query = [PFQuery queryWithClassName:@"User"];
+    [query whereKey:@"username" equalTo:user.username];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        self.dataArray = objects;
+        NSLog(@"%@",objects[0]);
+    }];
+
+
+//    self.userImageView.image = [UIImage imageNamed:@"Phil"];
 }
 
 - (void)didReceiveMemoryWarning {
