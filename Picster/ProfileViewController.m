@@ -29,13 +29,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    PFUser *user = [PFUser currentUser];
-    PFQuery *query = [PFQuery queryWithClassName:@"User"];
-    [query whereKey:@"username" equalTo:user.username];
-    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-        self.dataArray = objects;
-        NSLog(@"%@",objects[0]);
-    }];
+//    PFUser *user = [PFUser currentUser];
+//    PFQuery *query = [PFQuery queryWithClassName:@"User"];
+//    [query whereKey:@"username" equalTo:user.username];
+//    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+//        self.dataArray = objects;
+//        NSLog(@"%@",objects[0]);
+//    }];
 
 
 //    self.userImageView.image = [UIImage imageNamed:@"Phil"];
