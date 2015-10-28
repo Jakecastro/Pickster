@@ -30,7 +30,9 @@
 
     if (self.postImageView.image == nil) {
         [self popUpAlertController];
+        self.postButton.hidden = true;
     }
+
 
 
 
@@ -67,6 +69,7 @@
                              [self presentViewController:picker animated:YES completion:NULL];
 
                              [view dismissViewControllerAnimated:YES completion:nil];
+                             self.postButton.hidden = false;
 
 
                              
@@ -89,6 +92,8 @@
                                  [self presentViewController:picker animated:YES completion:NULL];
 
                                  [view dismissViewControllerAnimated:YES completion:nil];
+
+                                 self.postButton.hidden = false;
 //                                 PFObject *pic = [PFObject objectWithClassName:@"Post"];
 //                                 pic[@"postImage"] = self.postImageView.image;
 
