@@ -11,7 +11,7 @@
 		23D54A2D1BDED0DE00C9DD96 /* CreateAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D54A2C1BDED0DE00C9DD96 /* CreateAccountViewController.m */; settings = {ASSET_TAGS = (); }; };
 		23D54A301BDF0DD000C9DD96 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D54A2F1BDF0DD000C9DD96 /* Post.m */; settings = {ASSET_TAGS = (); }; };
 		23D54A331BDF0F1000C9DD96 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D54A321BDF0F1000C9DD96 /* User.m */; settings = {ASSET_TAGS = (); }; };
-		23D54A361BDFDC2800C9DD96 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D54A351BDFDC2800C9DD96 /* Comment.m */; settings = {ASSET_TAGS = (); }; };
+		23D54A361BDFDC2800C9DD96 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D54A351BDFDC2800C9DD96 /* Activity.m */; settings = {ASSET_TAGS = (); }; };
 		23E1626B1BD991C400D542E0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E1626A1BD991C400D542E0 /* main.m */; };
 		23E1626E1BD991C400D542E0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E1626D1BD991C400D542E0 /* AppDelegate.m */; };
 		23E162741BD991C400D542E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23E162721BD991C400D542E0 /* Main.storyboard */; };
@@ -72,8 +72,8 @@
 		23D54A2F1BDF0DD000C9DD96 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		23D54A311BDF0F1000C9DD96 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		23D54A321BDF0F1000C9DD96 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		23D54A341BDFDC2800C9DD96 /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
-		23D54A351BDFDC2800C9DD96 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
+		23D54A341BDFDC2800C9DD96 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
+		23D54A351BDFDC2800C9DD96 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
 		23E162661BD991C400D542E0 /* Picster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Picster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23E1626A1BD991C400D542E0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		23E1626C1BD991C400D542E0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -219,8 +219,8 @@
 				23D54A321BDF0F1000C9DD96 /* User.m */,
 				23D54A2E1BDF0DD000C9DD96 /* Post.h */,
 				23D54A2F1BDF0DD000C9DD96 /* Post.m */,
-				23D54A341BDFDC2800C9DD96 /* Comment.h */,
-				23D54A351BDFDC2800C9DD96 /* Comment.m */,
+				23D54A341BDFDC2800C9DD96 /* Activity.h */,
+				23D54A351BDFDC2800C9DD96 /* Activity.m */,
 				23E162721BD991C400D542E0 /* Main.storyboard */,
 				23E162751BD991C400D542E0 /* Assets.xcassets */,
 				23E162771BD991C400D542E0 /* LaunchScreen.storyboard */,
@@ -423,7 +423,7 @@
 				23E1637A1BDB18D500D542E0 /* CameraViewController.m in Sources */,
 				23D54A2A1BDED0D200C9DD96 /* LogInViewController.m in Sources */,
 				23E163771BDB187500D542E0 /* ActivityFeedViewController.m in Sources */,
-				23D54A361BDFDC2800C9DD96 /* Comment.m in Sources */,
+				23D54A361BDFDC2800C9DD96 /* Activity.m in Sources */,
 				23D54A331BDF0F1000C9DD96 /* User.m in Sources */,
 				23D54A301BDF0DD000C9DD96 /* Post.m in Sources */,
 				23E1637D1BDB18FB00D542E0 /* HomeViewController.m in Sources */,

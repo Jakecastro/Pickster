@@ -8,7 +8,7 @@
 
 #import <Parse/Parse.h>
 
-@interface Comment : PFObject
+@interface Activity : PFObject
 
 @property PFUser *commentCreator;
 @property NSString *commentText;

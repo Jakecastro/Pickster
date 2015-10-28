@@ -6,8 +6,8 @@
 //  Copyright © 2015 Jake Castro. All rights reserved.
 //
 
-#import "Comment.h"
+#import "Activity.h"
 
-@implementation Comment
+@implementation Activity
 
 @end

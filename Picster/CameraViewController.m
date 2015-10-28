@@ -11,9 +11,10 @@
 #import <Parse/Parse.h>
 
 
-@interface CameraViewController ()<UIImagePickerControllerDelegate>
+@interface CameraViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *postImageView;
 @property (weak, nonatomic) IBOutlet UIButton *postButton;
+@property UIImage *daPic;
 
 @end
 
@@ -23,15 +24,21 @@
     [super viewDidLoad];
 //    self.postImageView.image = [UIImage imageNamed:@"Phil"];
     self.view.backgroundColor = [UIColor lightGrayColor];
-    [self popUpAlertController];
+
+    
+// in the IBAction from the post button make sure to clear the imageView.
+
+    if (self.postImageView.image == nil) {
+        [self popUpAlertController];
+    }
 
 
 
 }
 
-- (void)viewWillAppear:(BOOL)animated{
-    [self popUpAlertController];
-}
+//- (void)viewWillAppear:(BOOL)animated{
+//    [self popUpAlertController];
+//}
 
 
 - (void)popUpAlertController{
@@ -52,10 +59,15 @@
                              picker.delegate = self;
                              picker.allowsEditing = YES;
                              picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-                             
+
+                             [self imagePickerController:picker didFinishPickingMediaWithInfo:NSDictionaryOfVariableBindings(self.postImageView)];
+//                             PFObject *pic = [PFObject objectWithClassName:@"Post"];
+//                             pic[@"postImage"] = picker;
+
                              [self presentViewController:picker animated:YES completion:NULL];
 
                              [view dismissViewControllerAnimated:YES completion:nil];
+
 
                              
 
@@ -70,10 +82,17 @@
                                  picker.delegate = self;
                                  picker.allowsEditing = YES;
                                  picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-                                 
+
+                                 [self imagePickerController:picker didFinishPickingMediaWithInfo:NSDictionaryOfVariableBindings(self.postImageView)];
+
+
                                  [self presentViewController:picker animated:YES completion:NULL];
 
                                  [view dismissViewControllerAnimated:YES completion:nil];
+//                                 PFObject *pic = [PFObject objectWithClassName:@"Post"];
+//                                 pic[@"postImage"] = self.postImageView.image;
+
+
                              }];
 
 
@@ -89,25 +108,41 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
 
-    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
-    self.postImageView.image = chosenImage;
+    self.daPic = info[UIImagePickerControllerEditedImage];
+    self.postImageView.image = self.daPic;
 
     [picker dismissViewControllerAnimated:YES completion:NULL];
 
 }
 
 
+//NSData *imageData = UIImagePNGRepresentation(profileImage);
+//PFFile *imageFile = [PFFile fileWithName:@"Profileimage.png" data:imageData];
+//[imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+
+- (IBAction)onPushPostButton:(UIButton *)sender {
+//on push should save to parse and clear the image view
+
+    PFObject *post = [PFObject objectWithClassName:@"Post"];
+    NSData *imageData = UIImagePNGRepresentation(self.postImageView.image);
+    PFUser *user = [PFUser currentUser];
+
+    [post saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error) {
+            NSLog(@"Yup");
+            post[@"imageForPost"] = imageData;
+            post[@"user"] = user;
+
+        }else{
+            NSLog(@"Well,Fuck");
+        }
+
+    }];
+
+    self.postImageView.image = nil;
 
 
-
-
-
-
-
-
-
-
-
+}
 
 
 

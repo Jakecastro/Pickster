@@ -11,6 +11,8 @@
 @interface Post : PFObject
 @property NSMutableArray *commentsArray;
 @property UIImage *postImage;
+//probably need to change above to a PFfile like below
+@property PFFile *imageForPost;
 @property CLLocation *location;
 @property NSInteger likeCount;
 
