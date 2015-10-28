@@ -9,6 +9,7 @@
 #import <Parse/Parse.h>
 
 @interface Post : PFObject
+
 @property NSMutableArray *commentsArray;
 @property UIImage *postImage;
 @property CLLocation *location;

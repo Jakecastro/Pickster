@@ -22,8 +22,7 @@
 @property (strong, nonatomic) PFUser *currentUser;
 @property (strong, nonatomic) NSArray *users;
 @property Post *post;
-@property (weak, nonatomic) IBOutlet UIImageView *userImage;
-@property (weak, nonatomic) IBOutlet UILabel *usernameLable;
+
 @end
 
 @implementation HomeViewController
@@ -77,14 +76,6 @@
     return cell;
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UIImageView *imgVew = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Phil"]];
-    return imgVew;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 55;
-}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     UINavigationController *nvc = segue.destinationViewController;
