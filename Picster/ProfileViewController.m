@@ -10,6 +10,7 @@
 #import "ProfileCollectionViewCell.h"
 #import "UserCommentsTableViewController.h"
 #import <Parse/Parse.h>
+#import "User.h"
 
 
 @interface ProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
@@ -23,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *userImagesCollectionView;
 
 @property (strong,nonatomic) NSArray *dataArray;
+@property (strong,nonatomic) User *profileUser;
 
 @end
 
@@ -30,29 +32,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-//    PFUser *user = [PFUser currentUser];
-//    PFQuery *query = [PFQuery queryWithClassName:@"User"];
-//    [query whereKey:@"username" equalTo:user.username];
-//    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-//        self.dataArray = objects;
-//        NSLog(@"%@",objects[0]);
-//    }];
-
+    
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
 
     self.dataArray = [NSArray new];
-
+    
+    PFUser *user = [PFUser currentUser];
+    //self.profileUser = [User currentUser];
+    self.usernameTextBox.text = user.username;
+    self.userBioTextBox.text = [user objectForKey:@"userBio"];
+    
+    
+    
     PFQuery *photosFromCurrentUser = [PFQuery queryWithClassName:@"Post"];
     [photosFromCurrentUser whereKey:@"senderID" equalTo:[[PFUser currentUser] objectId]];
     [photosFromCurrentUser whereKeyExists:@"postImage"];
 
     [photosFromCurrentUser findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         if (!error) {
-            NSLog(@"yup");
+            //NSLog(@"yup");
             self.dataArray = objects;
 
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -79,7 +81,7 @@
 
     [file getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
         cell.postImage.image = [UIImage imageWithData:data];
-        NSLog(@"%@",error);
+        //NSLog(@"%@",error);
     }];
 
     return cell;
@@ -87,7 +89,12 @@
 }
 
 - (IBAction)onEditButtonPressed:(UIButton *)sender {
-    
+    if ([self.userBioTextBox hasText]) {
+        PFUser *user = [PFUser currentUser];
+        [user setObject:self.userBioTextBox.text forKey:@"userBio"];
+        //self.profileUser.bioString = self.userBioTextBox.text;
+        [user saveInBackground];
+    }
 }
 
 //- (void)collectionView:(UICollectionView ​*)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {

@@ -9,6 +9,7 @@
 #import "LogInViewController.h"
 #import <Parse/Parse.h>
 #import "HomeViewController.h"
+#import "User.h"
 
 @interface LogInViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
@@ -22,8 +23,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.loginButton.enabled = false;
-//    self.loginButton.alpha = 0.5;
 
     [self.loginButton addTarget:self action:@selector(loginUser) forControlEvents:UIControlEventTouchUpInside];
 
@@ -32,9 +31,9 @@
 
 -(void)loginUser {
     if ([self.usernameTextField hasText] && [self.passwordTextField hasText]) {
-//        self.loginButton.enabled = true;
-//        self.loginButton.alpha = 1.0;
-        [PFUser logInWithUsernameInBackground:self.usernameTextField.text password:self.passwordTextField.text block:^(PFUser * _Nullable user, NSError * _Nullable error) {
+
+        
+        [User logInWithUsernameInBackground:self.usernameTextField.text password:self.passwordTextField.text block:^(PFUser * _Nullable user, NSError * _Nullable error) {
             if (error) {
                 NSLog(@"login failed");
                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Oooops"
@@ -51,15 +50,14 @@
                                  completion:nil];
             }
             else {
-                NSLog(@"success");
+                //NSLog(@"success");
                 [self dismissViewControllerAnimated:YES completion:nil];
 
             }
         }];
 
     } else{
-        //self.loginButton.enabled = true;
-        //self.loginButton.alpha = 1.0;
+
         NSLog(@"Type Something");
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Ooops"
                                                                        message:@"you must enter a username and a password before pressing login"
