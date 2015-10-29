@@ -8,6 +8,7 @@
 
 #import "ProfileViewController.h"
 #import "ProfileCollectionViewCell.h"
+#import "UserCommentsTableViewController.h"
 #import <Parse/Parse.h>
 
 
@@ -95,6 +96,13 @@
 }
 
 - (IBAction)onEditButtonPressed:(UIButton *)sender {
+    
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    UINavigationController *nvc = segue.destinationViewController;
+    UserCommentsTableViewController *ucVC = nvc.viewControllers[0];
+
 }
 
 @end
