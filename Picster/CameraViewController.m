@@ -127,38 +127,44 @@
 
 - (IBAction)onPushPostButton:(UIButton *)sender {
 //on push should save to parse and clear the image view
+    if ([self.postButton.titleLabel.text isEqualToString:@"Post another photo"]) {
+        [self popUpAlertController];
+        [self.postButton setTitle:@"Post" forState:UIControlStateNormal];
+    }
+    else {
+        NSString *user = [[PFUser currentUser] objectId];
+        NSData *imageData = UIImagePNGRepresentation(self.postImageView.image);
+        PFFile *imageFile = [PFFile fileWithName:@"currentUsersNameHereAndTime" data:imageData];
+        [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            if (error) {
+                NSLog(@"Well,fuck Me!");
+            }else{
+                PFObject *post = [PFObject objectWithClassName:@"Post"];
+                [post setObject:imageFile forKey:@"postImage"];
+                [post setObject:user forKey:@"senderID"];
 
+                [post saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                    if (!error) {
+                        NSLog(@"Yup");
+                        NSLog(@"%@", error);
+                        [self.postButton setTitle:@"Post another photo" forState:UIControlStateNormal];
+                        [self.postButton sizeToFit];
+                    }else{
+                        NSLog(@"Well,Fuck");
+                    }
+                    
+                }];
+            }
+        }];
 
-    NSString *user = [[PFUser currentUser] objectId];
-    NSData *imageData = UIImagePNGRepresentation(self.postImageView.image);
-    PFFile *imageFile = [PFFile fileWithName:@"currentUsersNameHereAndTime" data:imageData];
-    [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-        if (error) {
-            NSLog(@"Well,fuck Me!");
-        }else{
-            PFObject *post = [PFObject objectWithClassName:@"Post"];
-            [post setObject:imageFile forKey:@"postImage"];
-            [post setObject:user forKey:@"senderID"];
-
-            [post saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                if (!error) {
-                    NSLog(@"Yup");
-                    NSLog(@"%@", error);
-                }else{
-                    NSLog(@"Well,Fuck");
-                }
-                
-            }];
-        }
-    }];
-
-
-
+    }
 
     self.postImageView.image = nil;
 
 
+
 }
+
 
 
 

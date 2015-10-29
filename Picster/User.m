@@ -22,9 +22,9 @@
     return self;
 }
 
-+ (void)load {
-    [self registerSubclass];
-}
+//+ (void)load {
+//    [self registerSubclass];
+//}
 + (NSString *)parseClassName{
     return @"User";
 }
