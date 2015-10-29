@@ -651,7 +651,13 @@
                             <outlet property="delegate" destination="p6L-hD-r7b" id="VJV-5M-R8V"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="TWe-YV-8LH"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="TWe-YV-8LH">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="Ned-CH-Ecr">
+                            <connections>
+                                <action selector="onBackButtonPressed:" destination="p6L-hD-r7b" id="edv-bT-qrE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="userCommentsTableView" destination="4gQ-WM-3TU" id="t9w-Nj-wGc"/>
                     </connections>

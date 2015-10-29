@@ -10,4 +10,22 @@
 
 @implementation Post
 
+@dynamic username;
+@dynamic likesArray;
+@dynamic commentsArray;
+@dynamic postImage;
+
+-(instancetype)initWithClassName:(NSString *)newClassName{
+
+    return self;
+}
+
++ (void)load {
+    [self registerSubclass];
+}
++ (NSString *)parseClassName{
+    return @"Image";
+}
+
+
 @end
