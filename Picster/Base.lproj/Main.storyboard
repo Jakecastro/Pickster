@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="414" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pbk-NC-VjI">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="414" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pbk-NC-VjI">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -42,35 +42,77 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="7hG-rW-L11"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="IVl-KO-KvE">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <animations/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.97239037959999997" green="0.97239037959999997" blue="0.97239037959999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pbk-NC-VjI" secondAttribute="bottom" id="ALh-bo-iFg"/>
-                            <constraint firstItem="pbk-NC-VjI" firstAttribute="top" secondItem="IVl-KO-KvE" secondAttribute="bottom" id="BHD-no-uq2"/>
                             <constraint firstAttribute="trailing" secondItem="pbk-NC-VjI" secondAttribute="trailing" id="K3r-tq-a1t"/>
                             <constraint firstItem="pbk-NC-VjI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="KQv-ew-voB"/>
-                            <constraint firstItem="IVl-KO-KvE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="f0Q-4C-TNx"/>
-                            <constraint firstItem="IVl-KO-KvE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="q6c-yV-V7a"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="IVl-KO-KvE" secondAttribute="trailing" constant="-20" id="tau-Fy-O9W"/>
-                            <constraint firstItem="IVl-KO-KvE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="uPH-cz-ThD"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="home" id="FOO-nG-i3j"/>
                     <connections>
                         <outlet property="feedTableView" destination="pbk-NC-VjI" id="V54-4J-527"/>
-                        <outlet property="searchBar" destination="IVl-KO-KvE" id="dVM-dF-bex"/>
                         <outlet property="tableView" destination="pbk-NC-VjI" id="aYS-b4-ifv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2954" y="-855"/>
+            <point key="canvasLocation" x="-3634" y="-855"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="fUy-eC-9BL">
+            <objects>
+                <viewController id="tIQ-ZJ-Mve" customClass="SearchViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KrD-lx-IaP"/>
+                        <viewControllerLayoutGuide type="bottom" id="BnR-hd-3P0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XOh-0t-jr9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="XmS-Z8-p19">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <animations/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wj0-mg-w9z">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchCell" id="izy-Mr-UfE">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="izy-Mr-UfE" id="JbO-5i-DJ3">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wj0-mg-w9z" firstAttribute="top" secondItem="XmS-Z8-p19" secondAttribute="bottom" id="1Mw-jZ-5Na"/>
+                            <constraint firstAttribute="trailing" secondItem="wj0-mg-w9z" secondAttribute="trailing" id="5WC-23-vdT"/>
+                            <constraint firstItem="wj0-mg-w9z" firstAttribute="leading" secondItem="XOh-0t-jr9" secondAttribute="leading" id="Zxb-D7-3QK"/>
+                            <constraint firstItem="wj0-mg-w9z" firstAttribute="leading" secondItem="XmS-Z8-p19" secondAttribute="leading" id="gBx-na-IP7"/>
+                            <constraint firstItem="XmS-Z8-p19" firstAttribute="top" secondItem="KrD-lx-IaP" secondAttribute="bottom" id="jA8-kS-LAT"/>
+                            <constraint firstAttribute="bottom" secondItem="wj0-mg-w9z" secondAttribute="bottom" id="sTe-1k-rDW"/>
+                            <constraint firstItem="wj0-mg-w9z" firstAttribute="trailing" secondItem="XmS-Z8-p19" secondAttribute="trailing" id="yIv-Gl-lD9"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Search" image="Search" id="bbF-dH-w8t"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IGF-mm-SAl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2929" y="-837"/>
         </scene>
         <!--Camera-->
         <scene sceneID="dYJ-bO-DQb">
@@ -195,7 +237,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wlL-yG-biW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2954" y="505"/>
+            <point key="canvasLocation" x="-3634" y="553"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="S6P-Wl-R2c">
@@ -212,7 +254,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oJn-TE-8Mr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2954" y="-183"/>
+            <point key="canvasLocation" x="-3634" y="-183"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Oji-c2-8ij">
@@ -230,6 +272,7 @@
                         <segue destination="wNv-pq-Qeg" kind="relationship" relationship="viewControllers" id="KxD-zy-swp"/>
                         <segue destination="NBK-pN-8dR" kind="relationship" relationship="viewControllers" id="CZy-pP-rzu"/>
                         <segue destination="Wf0-fm-ZyX" kind="relationship" relationship="viewControllers" id="wzd-zf-KQp"/>
+                        <segue destination="tIQ-ZJ-Mve" kind="relationship" relationship="viewControllers" id="sRw-EN-huz"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z2y-eu-IIz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -740,6 +783,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Search" width="20" height="20"/>
         <image name="camera" width="22" height="20"/>
         <image name="home" width="22" height="19"/>
         <image name="profile" width="22" height="18"/>
