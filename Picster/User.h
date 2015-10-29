@@ -17,4 +17,6 @@
 @property NSString *bioString;
 
 
++ (NSString *)parseClassName;
+
 @end

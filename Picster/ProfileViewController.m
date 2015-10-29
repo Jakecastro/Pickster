@@ -52,7 +52,6 @@
 
     [photosFromCurrentUser findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         if (!error) {
-            //NSLog(@"%@", objects);
             NSLog(@"yup");
             self.dataArray = objects;
 
@@ -68,10 +67,6 @@
     self.userImageView.image = [UIImage imageNamed:@"Phil"];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 - (NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.dataArray.count;
@@ -80,9 +75,6 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ProfileCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"userPhotoCell" forIndexPath:indexPath];
 
-    //PFImageView *imageView = [PFImageView new];
-
-    //PFFile *file =[self.dataArray objectAtIndex:indexPath.row];
     PFFile *file = [[self.dataArray objectAtIndex:indexPath.row]objectForKey:@"postImage"];
 
     [file getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
@@ -92,16 +84,24 @@
 
     return cell;
 
-//    cell.postImage.image =
 }
 
 - (IBAction)onEditButtonPressed:(UIButton *)sender {
     
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//- (void)collectionView:(UICollectionView ​*)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+//
+//}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UICollectionViewCell *)sender {
     UINavigationController *nvc = segue.destinationViewController;
     UserCommentsTableViewController *ucVC = nvc.viewControllers[0];
+//    UICollectionViewCell *cell = (UICollectionViewCell *)sender;
+    NSIndexPath *indexPath = [self.userImagesCollectionView indexPathForCell:sender];
+
+    Post *post = [self.dataArray objectAtIndex:indexPath.row];
+    ucVC.postForComment = post;
 
 }
 

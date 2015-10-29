@@ -10,4 +10,25 @@
 
 @implementation User
 
+@dynamic profileImage;
+@dynamic photosArray;
+@dynamic follwersArray;
+@dynamic followingArray;
+@dynamic bioString;
+
+
+-(instancetype)initWithClassName:(NSString *)newClassName{
+
+    return self;
+}
+
++ (void)load {
+    [self registerSubclass];
+}
++ (NSString *)parseClassName{
+    return @"User";
+}
+
+
+
 @end

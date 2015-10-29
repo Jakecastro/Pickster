@@ -10,7 +10,9 @@
 
 @interface Activity : PFObject
 
-@property PFUser *commentCreator;
+@property NSString *username;
 @property NSString *commentText;
+
++ (NSString *)parseClassName;
 
 @end
