@@ -128,21 +128,32 @@
 - (IBAction)onPushPostButton:(UIButton *)sender {
 //on push should save to parse and clear the image view
 
-    PFObject *post = [PFObject objectWithClassName:@"Post"];
+
+    NSString *user = [[PFUser currentUser] objectId];
     NSData *imageData = UIImagePNGRepresentation(self.postImageView.image);
-    PFUser *user = [PFUser currentUser];
-
-    [post saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (!error) {
-            NSLog(@"Yup");
-            post[@"imageForPost"] = imageData;
-            post[@"user"] = user;
-
+    PFFile *imageFile = [PFFile fileWithName:@"currentUsersNameHereAndTime" data:imageData];
+    [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"Well,fuck Me!");
         }else{
-            NSLog(@"Well,Fuck");
-        }
+            PFObject *post = [PFObject objectWithClassName:@"Post"];
+            [post setObject:imageFile forKey:@"postImage"];
+            [post setObject:user forKey:@"senderID"];
 
+            [post saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (!error) {
+                    NSLog(@"Yup");
+                    NSLog(@"%@", error);
+                }else{
+                    NSLog(@"Well,Fuck");
+                }
+                
+            }];
+        }
     }];
+
+
+
 
     self.postImageView.image = nil;
 

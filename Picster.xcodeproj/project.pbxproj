@@ -12,6 +12,7 @@
 		23D54A301BDF0DD000C9DD96 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D54A2F1BDF0DD000C9DD96 /* Post.m */; settings = {ASSET_TAGS = (); }; };
 		23D54A331BDF0F1000C9DD96 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D54A321BDF0F1000C9DD96 /* User.m */; settings = {ASSET_TAGS = (); }; };
 		23D54A361BDFDC2800C9DD96 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D54A351BDFDC2800C9DD96 /* Activity.m */; settings = {ASSET_TAGS = (); }; };
+		23D54A9C1BE1937700C9DD96 /* ProfileCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D54A9B1BE1937700C9DD96 /* ProfileCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		23E1626B1BD991C400D542E0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E1626A1BD991C400D542E0 /* main.m */; };
 		23E1626E1BD991C400D542E0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E1626D1BD991C400D542E0 /* AppDelegate.m */; };
 		23E162741BD991C400D542E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23E162721BD991C400D542E0 /* Main.storyboard */; };
@@ -74,6 +75,8 @@
 		23D54A321BDF0F1000C9DD96 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		23D54A341BDFDC2800C9DD96 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
 		23D54A351BDFDC2800C9DD96 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
+		23D54A9A1BE1937700C9DD96 /* ProfileCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileCollectionViewCell.h; sourceTree = "<group>"; };
+		23D54A9B1BE1937700C9DD96 /* ProfileCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileCollectionViewCell.m; sourceTree = "<group>"; };
 		23E162661BD991C400D542E0 /* Picster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Picster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23E1626A1BD991C400D542E0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		23E1626C1BD991C400D542E0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -222,6 +225,8 @@
 				23D54A341BDFDC2800C9DD96 /* Activity.h */,
 				23D54A351BDFDC2800C9DD96 /* Activity.m */,
 				23E162721BD991C400D542E0 /* Main.storyboard */,
+				23D54A9A1BE1937700C9DD96 /* ProfileCollectionViewCell.h */,
+				23D54A9B1BE1937700C9DD96 /* ProfileCollectionViewCell.m */,
 				23E162751BD991C400D542E0 /* Assets.xcassets */,
 				23E162771BD991C400D542E0 /* LaunchScreen.storyboard */,
 				23E1627A1BD991C400D542E0 /* Info.plist */,
@@ -425,6 +430,7 @@
 				23E163771BDB187500D542E0 /* ActivityFeedViewController.m in Sources */,
 				23D54A361BDFDC2800C9DD96 /* Activity.m in Sources */,
 				23D54A331BDF0F1000C9DD96 /* User.m in Sources */,
+				23D54A9C1BE1937700C9DD96 /* ProfileCollectionViewCell.m in Sources */,
 				23D54A301BDF0DD000C9DD96 /* Post.m in Sources */,
 				23E1637D1BDB18FB00D542E0 /* HomeViewController.m in Sources */,
 				23E163741BDB184F00D542E0 /* ActivityFeedCommentsTableViewController.m in Sources */,
@@ -568,6 +574,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -583,6 +590,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
