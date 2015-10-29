@@ -27,7 +27,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="414"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f9w-5t-jjo" id="Smw-TS-WoJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="413.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="414"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                         </tableViewCellContentView>
@@ -185,7 +185,13 @@
                             <outlet property="delegate" destination="9TP-QT-vvP" id="Q48-Vk-4AI"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="bv6-TX-YQ0"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="bv6-TX-YQ0">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="Bha-Bh-Fcf">
+                            <connections>
+                                <action selector="onBackButtonPressed:" destination="9TP-QT-vvP" id="H8E-gp-OZa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wlL-yG-biW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -704,7 +710,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dcT-M9-KrD" id="c36-hf-E0l">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="45"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                         </tableViewCellContentView>
