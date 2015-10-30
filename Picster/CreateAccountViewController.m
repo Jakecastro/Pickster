@@ -8,6 +8,7 @@
 
 #import "CreateAccountViewController.h"
 #import <Parse/Parse.h>
+#import "User.h"
 
 @interface CreateAccountViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
@@ -26,7 +27,7 @@
 }
 
 - (IBAction)onCreateAndLoginButtonPressed:(UIButton *)sender {
-    PFUser *user = [PFUser user];
+    User *user = [PFUser user];
     
     if (![self.passwordTextField.text isEqualToString:self.verifyPasswordTextField.text]) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
@@ -52,8 +53,7 @@
         
         [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
             if (succeeded) {
-                // Success
-                NSLog(@"Success");
+                //NSLog(@"Success");
             } else {
                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
                                                                                message:@"There was a problem. Please try again later!"

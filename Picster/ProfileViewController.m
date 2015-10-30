@@ -10,9 +10,10 @@
 #import "ProfileCollectionViewCell.h"
 #import "UserCommentsTableViewController.h"
 #import <Parse/Parse.h>
+#import "User.h"
 
 
-@interface ProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+@interface ProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *userImageView;
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextBox;
 @property (weak, nonatomic) IBOutlet UITextField *userBioTextBox;
@@ -23,36 +24,49 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *userImagesCollectionView;
 
 @property (strong,nonatomic) NSArray *dataArray;
+@property (strong,nonatomic) User *profileUser;
+@property (strong,nonatomic) UIImage *selectedPhoto;
 
 @end
 
-@implementation ProfileViewController
+@implementation ProfileViewController{
+    BOOL imagePicked;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-//    PFUser *user = [PFUser currentUser];
-//    PFQuery *query = [PFQuery queryWithClassName:@"User"];
-//    [query whereKey:@"username" equalTo:user.username];
-//    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-//        self.dataArray = objects;
-//        NSLog(@"%@",objects[0]);
-//    }];
-
+    
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
 
     self.dataArray = [NSArray new];
-
+    
+    PFUser *user = [PFUser currentUser];
+    //self.profileUser = [User currentUser];
+    self.usernameTextBox.text = user.username;
+    self.userBioTextBox.text = [user objectForKey:@"userBio"];
+    self.userImageView.userInteractionEnabled = YES;
+    
+    
+//    if (![user objectForKey:@"profileImage"]) {
+//        self.userImageView.image = [UIImage imageNamed:@"phil"];
+//    }
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(pickPhoto:)];
+    [self.userImageView addGestureRecognizer:tap];
+    
+    
+    
     PFQuery *photosFromCurrentUser = [PFQuery queryWithClassName:@"Post"];
     [photosFromCurrentUser whereKey:@"senderID" equalTo:[[PFUser currentUser] objectId]];
     [photosFromCurrentUser whereKeyExists:@"postImage"];
 
     [photosFromCurrentUser findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         if (!error) {
-            NSLog(@"yup");
+            //NSLog(@"yup");
             self.dataArray = objects;
 
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -64,9 +78,113 @@
         }
     }];
 
-    self.userImageView.image = [UIImage imageNamed:@"Phil"];
+    //self.userImageView.image = [UIImage imageNamed:@"Phil"];
 }
 
+
+#pragma mark - Gesture Recognizer / Profile Image
+
+-(void)pickPhoto:(UIGestureRecognizer *)sender{
+    UIAlertController * view=   [UIAlertController
+                                 alertControllerWithTitle:@"Profile Photo"
+                                 message:@""
+                                 preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction* takeAPhoto = [UIAlertAction
+                                 actionWithTitle:@"Take a photo"
+                                 style:UIAlertActionStyleDefault
+                                 handler:^(UIAlertAction * action)
+                                 {
+                                     
+                                     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+                                     picker.delegate = self;
+                                     picker.allowsEditing = YES;
+                                     picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+                                     
+                                     [self imagePickerController:picker didFinishPickingMediaWithInfo:NSDictionaryOfVariableBindings(self.userImageView)];
+                                     //    PFObject *pic = [PFObject objectWithClassName:@"Post"];
+                                     //    pic[@"postImage"] = picker;
+                                     
+                                     [self presentViewController:picker animated:YES completion:NULL];
+                                     
+                                     [view dismissViewControllerAnimated:YES completion:nil];
+                                     
+                                     
+                                     
+                                     
+                                 }];
+    UIAlertAction* photoLib = [UIAlertAction
+                               actionWithTitle:@"Photo Library"
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction * action)
+                               
+                               {
+                                   UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+                                   picker.delegate = self;
+                                   picker.allowsEditing = YES;
+                                   picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                                   
+                                   [self imagePickerController:picker didFinishPickingMediaWithInfo:NSDictionaryOfVariableBindings(self.userImageView)];
+                                   
+                                   
+                                   [self presentViewController:picker animated:YES completion:NULL];
+                                   
+                                   [view dismissViewControllerAnimated:YES completion:nil];
+                                   
+                                   //self.postButton.hidden = false;
+                                   //                                 PFObject *pic = [PFObject objectWithClassName:@"Post"];
+                                   //                                 pic[@"postImage"] = self.postImageView.image;
+                                   
+                                   
+                               }];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    
+    
+    [view addAction:photoLib];
+    [view addAction:takeAPhoto];
+    [view addAction:cancelAction];
+    [self presentViewController:view animated:YES completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    
+    self.selectedPhoto = info[UIImagePickerControllerEditedImage];
+    self.userImageView.image = self.selectedPhoto;
+    imagePicked = YES;
+    
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+}
+
+-(void)uploadPhoto{
+    PFUser *user = [PFUser user];
+    
+    CGSize newSize = CGSizeMake(320, 480);
+    CGRect newRectangle = CGRectMake(0, 0, 320, 480);
+    UIGraphicsBeginImageContext(newSize);
+    [self.selectedPhoto drawInRect:newRectangle];
+    UIImage *resizedImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    NSData *imageData = UIImagePNGRepresentation(resizedImage);
+    PFFile *imageFile = [PFFile fileWithName:@"userImage" data:imageData];
+    [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"Problem saving image.");
+        }else{
+            [user setObject:imageFile forKey:@"profileImage"];
+            [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                if (error) {
+                    NSLog(@"%@",error);
+                }
+            }];
+        }
+    }];
+}
+
+#pragma mark - CollectionView Data Source
 
 - (NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.dataArray.count;
@@ -79,29 +197,50 @@
 
     [file getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
         cell.postImage.image = [UIImage imageWithData:data];
-        NSLog(@"%@",error);
+        //NSLog(@"%@",error);
     }];
 
     return cell;
 
 }
 
+#pragma mark - Edit Bio
+
 - (IBAction)onEditButtonPressed:(UIButton *)sender {
+//    if (imagePicked) {
+//        [self uploadPhoto];
+//        imagePicked = NO;
+//    }
+    
+    if ([self.userBioTextBox hasText]) {
+        PFUser *user = [PFUser currentUser];
+        [user setObject:self.userBioTextBox.text forKey:@"userBio"];
+        //self.profileUser.bioString = self.userBioTextBox.text;
+        [user saveInBackground];
+    }
+    
+    
     
 }
 
-//- (void)collectionView:(UICollectionView ​*)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-//
-//}
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    [self performSegueWithIdentifier:@"ShowComments" sender:self];
+}
+
+-(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender{
+    return NO;
+}
+
+#pragma mark - Segue 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UICollectionViewCell *)sender {
-    UINavigationController *nvc = segue.destinationViewController;
-    UserCommentsTableViewController *ucVC = nvc.viewControllers[0];
+//    UINavigationController *navController = segue.destinationViewController;
+//    UserCommentsTableViewController *commentsVC = navController.viewControllers[0];
 //    UICollectionViewCell *cell = (UICollectionViewCell *)sender;
-    NSIndexPath *indexPath = [self.userImagesCollectionView indexPathForCell:sender];
+//    NSIndexPath *indexPath = [self.userImagesCollectionView indexPathForCell:sender];
 
-    Post *post = [self.dataArray objectAtIndex:indexPath.row];
-    ucVC.postForComment = post;
+//    Post *post = [self.dataArray objectAtIndex:indexPath.row];
+//    ucVC.postForComment = post;
 
 }
 

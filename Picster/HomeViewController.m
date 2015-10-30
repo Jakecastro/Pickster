@@ -40,7 +40,7 @@
     [super viewDidAppear:animated];
     
     PFUser *currentUser = [PFUser currentUser];
-//    [PFUser logOut];
+    //[PFUser logOut];
     
     if (!currentUser) {
         LogInViewController *loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"loginController"];
