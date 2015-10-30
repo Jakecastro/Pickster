@@ -52,7 +52,7 @@
     
     
 //    if (![user objectForKey:@"profileImage"]) {
-//        self.userImageView.image = [UIImage imageNamed:@"phil"];
+        self.userImageView.image = [UIImage imageNamed:@"phil"];
 //    }
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(pickPhoto:)];
