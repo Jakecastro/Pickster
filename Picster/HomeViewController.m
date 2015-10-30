@@ -11,6 +11,7 @@
 #import <Parse/Parse.h>
 #import "Post.h"
 #import "ActivityFeedCommentsTableViewController.h"
+#import "HomeTableViewCell.h"
 
 
 
@@ -102,7 +103,7 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"feedPhotoCell"];
+    HomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"feedPhotoCell"];
     self.followedUsers = self.users[indexPath.row];
 
 // TODO: change username to be in the header, set profile pic to be in the header add postimage to the cell image veiw
@@ -110,11 +111,11 @@
     PFFile *file = [[self.postArray objectAtIndex:indexPath.row]objectForKey:@"postImage"];
         
     [file getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
-        cell.imageView.image = [UIImage imageWithData:data];
+        cell.feedView.image = [UIImage imageWithData:data];
         NSLog(@"%@",error);
+        cell.usernameLabel.text = self.followedUsers.username;
     }];
-    //cell.textLabel.text = self.followedUsers.username;
-    
+
     return cell;
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		233767861BE3ECE600EACB5D /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 233767851BE3ECE600EACB5D /* HomeTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		23D54A2A1BDED0D200C9DD96 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D54A291BDED0D200C9DD96 /* LogInViewController.m */; settings = {ASSET_TAGS = (); }; };
 		23D54A2D1BDED0DE00C9DD96 /* CreateAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D54A2C1BDED0DE00C9DD96 /* CreateAccountViewController.m */; settings = {ASSET_TAGS = (); }; };
 		23D54A301BDF0DD000C9DD96 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D54A2F1BDF0DD000C9DD96 /* Post.m */; settings = {ASSET_TAGS = (); }; };
@@ -66,6 +67,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		233767841BE3ECE600EACB5D /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
+		233767851BE3ECE600EACB5D /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		23D54A281BDED0D200C9DD96 /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LogInViewController.h; path = Picster/LogInViewController.h; sourceTree = "<group>"; };
 		23D54A291BDED0D200C9DD96 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LogInViewController.m; path = Picster/LogInViewController.m; sourceTree = "<group>"; };
 		23D54A2B1BDED0DE00C9DD96 /* CreateAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateAccountViewController.h; path = Picster/CreateAccountViewController.h; sourceTree = "<group>"; };
@@ -228,6 +231,8 @@
 				23D54A341BDFDC2800C9DD96 /* Activity.h */,
 				23D54A351BDFDC2800C9DD96 /* Activity.m */,
 				23E162721BD991C400D542E0 /* Main.storyboard */,
+				233767841BE3ECE600EACB5D /* HomeTableViewCell.h */,
+				233767851BE3ECE600EACB5D /* HomeTableViewCell.m */,
 				23D831241BE2C33D00E09138 /* SearchViewController.h */,
 				23D831251BE2C33D00E09138 /* SearchViewController.m */,
 				23D54A9A1BE1937700C9DD96 /* ProfileCollectionViewCell.h */,
@@ -435,6 +440,7 @@
 				23D831261BE2C33D00E09138 /* SearchViewController.m in Sources */,
 				23E163771BDB187500D542E0 /* ActivityFeedViewController.m in Sources */,
 				23D54A361BDFDC2800C9DD96 /* Activity.m in Sources */,
+				233767861BE3ECE600EACB5D /* HomeTableViewCell.m in Sources */,
 				23D54A331BDF0F1000C9DD96 /* User.m in Sources */,
 				23D54A9C1BE1937700C9DD96 /* ProfileCollectionViewCell.m in Sources */,
 				23D54A301BDF0DD000C9DD96 /* Post.m in Sources */,
