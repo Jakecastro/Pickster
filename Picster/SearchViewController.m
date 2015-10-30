@@ -64,6 +64,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    [self.searchBar resignFirstResponder];
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     PFUser *user = [self.searchResultsArray objectAtIndex:indexPath.row];
     PFUser *currentUser = [PFUser currentUser];
