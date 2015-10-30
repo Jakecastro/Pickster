@@ -35,8 +35,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
+    self.userBioTextBox.enabled = false;
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -66,7 +66,6 @@
 
     [photosFromCurrentUser findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         if (!error) {
-            //NSLog(@"yup");
             self.dataArray = objects;
 
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -207,19 +206,22 @@
 #pragma mark - Edit Bio
 
 - (IBAction)onEditButtonPressed:(UIButton *)sender {
-//    if (imagePicked) {
-//        [self uploadPhoto];
-//        imagePicked = NO;
-//    }
+
     
-    if ([self.userBioTextBox hasText]) {
-        PFUser *user = [PFUser currentUser];
-        [user setObject:self.userBioTextBox.text forKey:@"userBio"];
-        //self.profileUser.bioString = self.userBioTextBox.text;
-        [user saveInBackground];
+    if ([self.editButton.titleLabel.text isEqualToString:@"Save"]) {
+        self.userBioTextBox.enabled = false;
+        [self.editButton setTitle:@"Edit" forState:UIControlStateNormal];
     }
-    
-    
+    else if ([self.editButton.titleLabel.text isEqualToString:@"Edit"]) {
+        if ([self.userBioTextBox hasText]) {
+            self.userBioTextBox.enabled = true;
+            PFUser *user = [PFUser currentUser];
+            [user setObject:self.userBioTextBox.text forKey:@"userBio"];
+            [user saveInBackground];
+            [self.editButton setTitle:@"Save" forState:UIControlStateNormal];
+            
+        }
+    }
     
 }
 
