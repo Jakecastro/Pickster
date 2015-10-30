@@ -609,6 +609,16 @@
                                         <color key="textColor" red="0.39635192100400374" green="0.39635192100400374" blue="0.39635192100400374" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8o-U5-jpG">
+                                        <rect key="frame" x="390" y="36" width="48" height="30"/>
+                                        <animations/>
+                                        <state key="normal" title="Logout">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onLogoutButtonPressed:" destination="Wf0-fm-ZyX" eventType="touchUpInside" id="DOb-b1-Q4c"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" red="0.94024051047120416" green="0.94024051047120416" blue="0.94024051047120416" alpha="1" colorSpace="calibratedRGB"/>
@@ -619,12 +629,14 @@
                                     <constraint firstAttribute="height" constant="196" id="40o-16-yyy"/>
                                     <constraint firstItem="bCN-Aq-cgM" firstAttribute="leading" secondItem="rce-6b-Ub3" secondAttribute="leading" constant="155" id="594-Ux-i1F"/>
                                     <constraint firstAttribute="width" constant="605" id="5YJ-rZ-NKu"/>
+                                    <constraint firstItem="h8o-U5-jpG" firstAttribute="baseline" secondItem="5BH-yC-xZZ" secondAttribute="baseline" id="64C-7H-8q8"/>
                                     <constraint firstItem="U86-DV-x53" firstAttribute="top" secondItem="KPS-rN-vNe" secondAttribute="bottom" constant="5" id="6nm-Yw-Tks"/>
                                     <constraint firstItem="olN-Uy-DKH" firstAttribute="centerX" secondItem="GV5-g7-vZu" secondAttribute="centerX" id="E4G-RF-Q8j"/>
                                     <constraint firstItem="olN-Uy-DKH" firstAttribute="leading" secondItem="KPS-rN-vNe" secondAttribute="trailing" constant="18" id="GvO-7Z-PNp"/>
                                     <constraint firstItem="olN-Uy-DKH" firstAttribute="leading" secondItem="WWb-Cl-GjL" secondAttribute="leading" id="HfF-KV-sWg"/>
                                     <constraint firstItem="bCN-Aq-cgM" firstAttribute="top" secondItem="5BH-yC-xZZ" secondAttribute="top" id="ILI-4N-cZV"/>
                                     <constraint firstItem="U86-DV-x53" firstAttribute="baseline" secondItem="WWb-Cl-GjL" secondAttribute="baseline" id="IvB-hq-3cV"/>
+                                    <constraint firstItem="h8o-U5-jpG" firstAttribute="trailing" secondItem="5BH-yC-xZZ" secondAttribute="trailing" id="Ivi-OM-JOx"/>
                                     <constraint firstItem="VFN-bg-oaJ" firstAttribute="firstBaseline" secondItem="WWb-Cl-GjL" secondAttribute="firstBaseline" id="Lqv-kz-30k"/>
                                     <constraint firstItem="OCx-kq-1qQ" firstAttribute="firstBaseline" secondItem="olN-Uy-DKH" secondAttribute="firstBaseline" id="M6V-1M-Xh6"/>
                                     <constraint firstItem="olN-Uy-DKH" firstAttribute="top" secondItem="GV5-g7-vZu" secondAttribute="bottom" constant="11" id="NqP-yw-ttp"/>
@@ -710,6 +722,7 @@
                         <outlet property="userImagesCollectionView" destination="Yoc-qV-Qpx" id="6QI-j6-Jjz"/>
                         <outlet property="usernameTextBox" destination="5BH-yC-xZZ" id="q9Y-Gm-gWy"/>
                         <segue destination="xW3-j5-WrM" kind="show" identifier="ShowComments" id="eku-BJ-XqI"/>
+                        <segue destination="0Kd-0p-ls6" kind="show" identifier="logout" id="a1m-Ib-iPk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hAu-fy-Az9" userLabel="First Responder" sceneMemberID="firstResponder"/>

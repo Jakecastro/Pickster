@@ -270,13 +270,13 @@
 }
 
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    NSLog(@"selected button index = %d", buttonIndex);
-    if (buttonIndex == 1) {
-        // Do what you need to do to delete the cell
-        [self.userImagesCollectionView reloadData];
-    }
-}
+//- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+//    NSLog(@"selected button index = %d", buttonIndex);
+//    if (buttonIndex == 1) {
+//        // Do what you need to do to delete the cell
+//        [self.userImagesCollectionView reloadData];
+//    }
+//}
 
 
 - (void)profileCollectionViewCell:(id)cell didLongPressCell:(UILongPressGestureRecognizer *)sender {
@@ -300,6 +300,10 @@
 }
 
 
+- (IBAction)onLogoutButtonPressed:(UIButton *)sender {
+    [PFUser logOut];
+    [self performSegueWithIdentifier:@"logout" sender:self];
+}
 
 
 
