@@ -13,7 +13,7 @@
 #import "User.h"
 
 
-@interface ProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface ProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ProfileCollectionViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *userImageView;
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextBox;
 @property (weak, nonatomic) IBOutlet UITextField *userBioTextBox;
@@ -23,7 +23,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *numberOfPosts;
 @property (weak, nonatomic) IBOutlet UICollectionView *userImagesCollectionView;
 
-@property (strong,nonatomic) NSArray *dataArray;
+
+
+@property (strong,nonatomic) NSMutableArray *dataArray;
 @property (strong,nonatomic) User *profileUser;
 @property (strong,nonatomic) UIImage *selectedPhoto;
 
@@ -42,7 +44,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
 
-    self.dataArray = [NSArray new];
+    self.dataArray = [NSMutableArray new];
     
     PFUser *user = [PFUser currentUser];
     //self.profileUser = [User currentUser];
@@ -66,7 +68,7 @@
 
     [photosFromCurrentUser findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         if (!error) {
-            self.dataArray = objects;
+            self.dataArray = [objects mutableCopy];
 
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.userImagesCollectionView reloadData];
@@ -191,6 +193,7 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ProfileCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"userPhotoCell" forIndexPath:indexPath];
+    cell.delegate = self;
 
     PFFile *file = [[self.dataArray objectAtIndex:indexPath.row]objectForKey:@"postImage"];
 
@@ -202,6 +205,7 @@
     return cell;
 
 }
+
 
 #pragma mark - Edit Bio
 
@@ -245,5 +249,60 @@
 //    ucVC.postForComment = post;
 
 }
+
+
+- (IBAction)didLongPressCellToDelete:(UILongPressGestureRecognizer*)gesture {
+    CGPoint tapLocation = [gesture locationInView:self.userImagesCollectionView];
+    NSIndexPath *indexPath = [self.userImagesCollectionView indexPathForItemAtPoint:tapLocation];
+    if (indexPath && gesture.state == UIGestureRecognizerStateBegan) {
+        NSLog(@"image with index %ld to be deleted", (long)indexPath.item);
+        NSInteger itemIndexToDelete = indexPath.item;
+        [self.dataArray removeObjectAtIndex:itemIndexToDelete];
+        [self.userImagesCollectionView reloadData];
+
+//        UIAlertView *deleteAlert = [[UIAlertView alloc]
+//                                    initWithTitle:@"Delete?"
+//                                    message:@"Are you sure you want to delete this post?"
+//                                    delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes", nil];
+//        [deleteAlert show];
+
+    }
+}
+
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    NSLog(@"selected button index = %d", buttonIndex);
+    if (buttonIndex == 1) {
+        // Do what you need to do to delete the cell
+        [self.userImagesCollectionView reloadData];
+    }
+}
+
+
+- (void)profileCollectionViewCell:(id)cell didLongPressCell:(UILongPressGestureRecognizer *)sender {
+    CGPoint tapLocation = [sender locationInView:self.userImagesCollectionView];
+    NSIndexPath *indexPath = [self.userImagesCollectionView indexPathForItemAtPoint:tapLocation];
+    if (indexPath && sender.state == UIGestureRecognizerStateBegan) {
+        NSLog(@"image with index %ld to be deleted", (long)indexPath.item);
+        NSInteger itemIndexToDelete = indexPath.item;
+        [self.dataArray removeObjectAtIndex:itemIndexToDelete];
+        [self.userImagesCollectionView reloadData];
+
+        //        UIAlertView *deleteAlert = [[UIAlertView alloc]
+        //                                    initWithTitle:@"Delete?"
+        //                                    message:@"Are you sure you want to delete this post?"
+        //                                    delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes", nil];
+        //        [deleteAlert show];
+        
+    }
+
+
+}
+
+
+
+
+
+
 
 @end

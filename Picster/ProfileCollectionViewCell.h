@@ -9,8 +9,17 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
+
+@protocol ProfileCollectionViewCellDelegate <NSObject>
+
+- (void) profileCollectionViewCell:(id)cell didLongPressCell:(UILongPressGestureRecognizer *)sender;
+
+@end
+
 @interface ProfileCollectionViewCell : UICollectionViewCell
+
 @property (weak, nonatomic) IBOutlet UIImageView *postImage;
 
+@property id<ProfileCollectionViewCellDelegate> delegate;
 
 @end
