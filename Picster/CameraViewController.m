@@ -142,6 +142,7 @@
                 PFObject *post = [PFObject objectWithClassName:@"Post"];
                 [post setObject:imageFile forKey:@"postImage"];
                 [post setObject:user forKey:@"senderID"];
+                [post setObject:[PFUser currentUser] forKey:@"author"];
 
                 [post saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                     if (!error) {

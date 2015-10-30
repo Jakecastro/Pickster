@@ -69,11 +69,12 @@
     PFQuery *postQuery = [PFQuery queryWithClassName:@"Post"];
     //[postQuery whereKey:@"senderID" equalTo:[[PFUser currentUser] objectId]];
     [postQuery whereKeyExists:@"postImage"];
+    [postQuery whereKeyExists:@"author"];
     
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         if (!error) {
             self.postArray = objects;
-            NSLog(@"Post %lu",[objects count]);
+            //NSLog(@"Post %lu",[objects count]);
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.tableView reloadData];
             });
@@ -109,11 +110,13 @@
 // TODO: change username to be in the header, set profile pic to be in the header add postimage to the cell image veiw
     
     PFFile *file = [[self.postArray objectAtIndex:indexPath.row]objectForKey:@"postImage"];
-        
+    //PFUser *author = [[self.postArray objectAtIndex:indexPath.row]objectForKey:@"author"];
+    //NSLog(@"%@",author);
+
     [file getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
         cell.feedView.image = [UIImage imageWithData:data];
-        NSLog(@"%@",error);
-        cell.usernameLabel.text = self.followedUsers.username;
+        //NSLog(@"%@",);
+        cell.usernameLabel.text = [[self.postArray objectAtIndex:indexPath.row]objectForKey:@"username"];
     }];
 
     return cell;

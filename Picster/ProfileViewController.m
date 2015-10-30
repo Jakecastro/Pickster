@@ -53,9 +53,9 @@
     self.userImageView.userInteractionEnabled = YES;
     
     
-//    if (![user objectForKey:@"profileImage"]) {
-        self.userImageView.image = [UIImage imageNamed:@"phil"];
-//    }
+    if (!imagePicked) {
+        self.userImageView.image = [UIImage imageNamed:@"Phil"];
+    }
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(pickPhoto:)];
     [self.userImageView addGestureRecognizer:tap];

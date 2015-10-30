@@ -28,11 +28,11 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="394"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f9w-5t-jjo" id="Smw-TS-WoJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="393.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="394"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vuh-VC-u9K">
-                                                    <rect key="frame" x="139" y="36.5" width="279.5" height="279.5"/>
+                                                    <rect key="frame" x="139" y="37" width="280" height="279"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="vuh-VC-u9K" secondAttribute="height" multiplier="1:1" id="Va8-0q-kCB"/>
@@ -48,14 +48,38 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ky-gd-QOA">
+                                                    <rect key="frame" x="321" y="356" width="109" height="30"/>
+                                                    <animations/>
+                                                    <color key="backgroundColor" red="0.54477370690000004" green="0.7741568311" blue="0.7064844173" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="Like">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZb-Eq-sOe">
+                                                    <rect key="frame" x="170" y="355" width="101" height="30"/>
+                                                    <animations/>
+                                                    <color key="backgroundColor" red="1" green="0.52825935030000004" blue="0.2457165479" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="101" id="zT9-an-dwg"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Comment">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
                                             </subviews>
                                             <animations/>
                                             <constraints>
+                                                <constraint firstItem="1ky-gd-QOA" firstAttribute="trailing" secondItem="vuh-VC-u9K" secondAttribute="trailing" id="4UY-BJ-hbA"/>
                                                 <constraint firstItem="vuh-VC-u9K" firstAttribute="top" secondItem="cgh-QX-3Fh" secondAttribute="bottom" constant="8" id="61u-Xr-Y9x"/>
                                                 <constraint firstItem="cgh-QX-3Fh" firstAttribute="top" secondItem="Smw-TS-WoJ" secondAttribute="topMargin" constant="30" id="E09-zW-F2S"/>
+                                                <constraint firstItem="1ky-gd-QOA" firstAttribute="top" secondItem="vuh-VC-u9K" secondAttribute="bottom" constant="29" id="N1g-iv-z1r"/>
+                                                <constraint firstItem="iZb-Eq-sOe" firstAttribute="leading" secondItem="vuh-VC-u9K" secondAttribute="leading" id="b8R-eo-6Mt"/>
                                                 <constraint firstItem="cgh-QX-3Fh" firstAttribute="leading" secondItem="Smw-TS-WoJ" secondAttribute="leadingMargin" id="bMf-Mv-FXB"/>
                                                 <constraint firstItem="vuh-VC-u9K" firstAttribute="centerX" secondItem="Smw-TS-WoJ" secondAttribute="centerX" id="c4g-lE-hPg"/>
                                                 <constraint firstItem="vuh-VC-u9K" firstAttribute="centerY" secondItem="Smw-TS-WoJ" secondAttribute="centerY" id="klm-5i-sGN"/>
+                                                <constraint firstItem="iZb-Eq-sOe" firstAttribute="top" secondItem="vuh-VC-u9K" secondAttribute="bottom" constant="29" id="lDt-bq-PHI"/>
+                                                <constraint firstItem="1ky-gd-QOA" firstAttribute="leading" secondItem="iZb-Eq-sOe" secondAttribute="trailing" constant="49" id="v66-N2-eL8"/>
                                                 <constraint firstAttribute="trailing" secondItem="cgh-QX-3Fh" secondAttribute="trailing" id="xm5-Zd-A4O"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -121,7 +145,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="izy-Mr-UfE" id="JbO-5i-DJ3">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                         </tableViewCellContentView>
@@ -807,7 +831,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dcT-M9-KrD" id="c36-hf-E0l">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="45"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                         </tableViewCellContentView>
