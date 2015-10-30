@@ -10,4 +10,23 @@
 
 @implementation ProfileCollectionViewCell
 
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+
+    if (self) {
+        UILongPressGestureRecognizer *pgr = [[UILongPressGestureRecognizer alloc]
+                                             initWithTarget:self action:@selector(handleLong:)];
+        [self addGestureRecognizer:pgr];
+    }
+    return self;
+}
+
+-(IBAction)handleLong:(UILongPressGestureRecognizer *)sender {
+
+    [self.delegate profileCollectionViewCell:self didLongPressCell:sender];
+}
+
+
+
 @end
