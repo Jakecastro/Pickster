@@ -624,7 +624,6 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="postImage" destination="CFv-sr-PTF" id="tq5-yd-W2j"/>
-                                            <segue destination="xW3-j5-WrM" kind="show" id="L7u-EB-90N"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -655,11 +654,12 @@
                         <outlet property="userImageView" destination="bCN-Aq-cgM" id="phZ-fz-SaN"/>
                         <outlet property="userImagesCollectionView" destination="Yoc-qV-Qpx" id="6QI-j6-Jjz"/>
                         <outlet property="usernameTextBox" destination="5BH-yC-xZZ" id="q9Y-Gm-gWy"/>
+                        <segue destination="xW3-j5-WrM" kind="show" identifier="ShowComments" id="eku-BJ-XqI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hAu-fy-Az9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-666" y="-855"/>
+            <point key="canvasLocation" x="-666" y="-800"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="WhW-yC-El7">
@@ -670,11 +670,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="DEN-zw-z44">
+                        <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="XZp-cZ-72u">
                             <rect key="frame" x="0.0" y="136" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                            <animations/>
-                            <items/>
+                            <items>
+                                <barButtonItem title="Send" id="w0x-zm-Bh2"/>
+                                <barButtonItem style="plain" id="kjx-Fa-49I">
+                                    <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="gR8-a8-jzV">
+                                        <rect key="frame" x="70" y="7" width="473" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </barButtonItem>
+                                <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="ebZ-aW-T06"/>
+                            </items>
                         </toolbar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="userCommentsCell" textLabel="Bfg-7s-9so" detailTextLabel="mMm-hh-KbR" style="IBUITableViewCellStyleSubtitle" id="0zh-CP-zrA">
@@ -729,7 +739,7 @@
         <!--Navigation Controller-->
         <scene sceneID="uKc-ex-OeE">
             <objects>
-                <navigationController id="xW3-j5-WrM" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ShowImageNav" id="xW3-j5-WrM" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vza-dh-TMW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
